@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8a09678-a96c-43ed-b107-6c4161d64af3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/conversor/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/boton.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/intercambio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/kilogramos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/peso.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/signo-de-dolar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/intercambiar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/conversor/Conversor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/conversor/Conversor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/conversor/ConversorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/conversor/ConversorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/oracle/conversor/api/CurrencyApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/oracle/conversor/api/CurrencyApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/oracle/conversor/conversor-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/conversor/conversor-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/oracle/conversor/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/oracle/conversor/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +87,8 @@
       <workItem from="1678589396793" duration="5582000" />
       <workItem from="1678887230382" duration="15462000" />
       <workItem from="1678928614724" duration="9405000" />
+      <workItem from="1678970169088" duration="7465000" />
+      <workItem from="1678990992743" duration="5698000" />
     </task>
     <servers />
   </component>

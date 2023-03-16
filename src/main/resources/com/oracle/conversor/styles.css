@@ -18,5 +18,44 @@
     -fx-alignment: center;
 }
 
+#botonInvertir {
+    -fx-background-color: #38369A;
+    -fx-background-radius: 150;
+    -fx-pref-width: 300;
+    -fx-pref-height: 300;
+}
+
+#botonInvertir:hover{
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 150;
+}
+
+#botonInvertir:pressed{
+    -fx-background-color: #4A53FC;
+}
+
+#labelResultado {
+    -fx-background-color: white;
+    -fx-pref-height: 33px;
+    -fx-background-radius: 5;
+}
+
+#botonCalcular {
+    -fx-background-color: #38369A;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+}
+
+#botonCalcular:hover{
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3;
+}
+
+#botonCalcular:pressed{
+    -fx-background-color: #4A53FC;
+}
+
 
 

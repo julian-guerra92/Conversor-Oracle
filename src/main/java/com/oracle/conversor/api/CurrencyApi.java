@@ -14,19 +14,25 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.TreeMap;
 
 public class CurrencyApi {
 
     private static final String API_BASE_URL = "https://api.apilayer.com/currency_data";
     private String apiKey;
-    private Map<String, String> currenciesList;
+    private TreeMap<String, String> currenciesList;
 
-    public CurrencyApi() throws IOException {
+    public Map<String, String> getCurrenciesList() {
+        return currenciesList;
+    }
+
+    public CurrencyApi() throws IOException, InterruptedException {
         Properties properties = new Properties();
         InputStream entry = new FileInputStream(".properties");
         properties.load(entry);
         apiKey = properties.getProperty("currency_key");
-        currenciesList = new HashMap<>();
+        currenciesList = new TreeMap<>();
+        getListCurrency();
     }
 
     public void getListCurrency() throws IOException, InterruptedException {
@@ -48,10 +54,10 @@ public class CurrencyApi {
         }
     }
 
-    public float getExchangeRate(String currenci, String source) throws IOException, InterruptedException {
+    public float getExchangeRate(String currency, String source) throws IOException, InterruptedException {
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder()
-                .uri(URI.create(API_BASE_URL + "/live?source=" + source + "&currencies=" + currenci))
+                .uri(URI.create(API_BASE_URL + "/live?source=" + source + "&currencies=" + currency))
                 .GET()
                 .header("apiKey", apiKey)
                 .build();
@@ -61,7 +67,7 @@ public class CurrencyApi {
         );
         JSONObject response = new JSONObject(httpResponse.body());
         JSONObject exchageRate = response.getJSONObject("quotes");
-        return exchageRate.getFloat(source+currenci);
+        return exchageRate.getFloat(source+currency);
     }
 
 }
