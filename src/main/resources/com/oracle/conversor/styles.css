@@ -1,0 +1,22 @@
+.root {
+    -fx-background-color: #111111;
+    -fx-font-family: Comfortaa;
+    -fx-font-weight: bold;
+}
+
+.menu-bar {
+    -fx-background-color: #8D99AE;
+    -fx-padding: 0px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #1F93FF;
+}
+
+#title, #subTitle {
+    -fx-text-fill: white;
+    -fx-alignment: center;
+}
+
+
+

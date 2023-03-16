@@ -1,16 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.oracle.conversor.ConversorController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="CENTER" maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oracle.conversor.ConversorController">
+   <GridPane alignment="CENTER" maxHeight="500.0" maxWidth="600.0" prefHeight="500.0" prefWidth="600.0">
+     <columnConstraints>
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+         <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="63.0" minHeight="24.0" prefHeight="51.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="71.0" minHeight="30.0" prefHeight="51.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="243.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="271.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <MenuBar fx:id="barraMenu" prefHeight="27.0" prefWidth="614.0" GridPane.columnSpan="6">
+           <menus>
+             <Menu fx:id="menuOpciones" mnemonicParsing="false" text="Menu">
+               <items>
+                     <MenuItem id="opcionDivisas" fx:id="opcionDivisas" mnemonicParsing="false" text="Divisas">
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../../images/signo-de-dolar.png" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                 <MenuItem fx:id="opcionMagnitudes" mnemonicParsing="false" text="Magnitudes">
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../../images/kilogramos.png" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+                     <SeparatorMenuItem mnemonicParsing="false" />
+                     <MenuItem fx:id="opcionExit" mnemonicParsing="false" text="Exit">
+                        <graphic>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../../images/boton.png" />
+                              </image>
+                           </ImageView>
+                        </graphic></MenuItem>
+               </items>
+             </Menu>
+             <Menu fx:id="menuHelp" mnemonicParsing="false" text="Help">
+               <items>
+                 <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+             </Menu>
+           </menus>
+         </MenuBar>
+         <Label fx:id="title" contentDisplay="CENTER" prefHeight="44.0" prefWidth="490.0" text="Conversor de Divisas" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2">
+            <font>
+               <Font name="Comfortaa Bold" size="31.0" />
+            </font>
+         </Label>
+         <ChoiceBox prefHeight="33.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+         <Label fx:id="subTitle" prefHeight="18.0" prefWidth="216.0" text="Divisa Inicial" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <TextField fx:id="textCantInitial" prefHeight="33.0" prefWidth="200.0" text="1" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+         <Label fx:id="subTitle" prefHeight="18.0" prefWidth="194.0" text="Valor Inicial" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="4">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="subTitle" prefHeight="18.0" prefWidth="216.0" text="Divisa Final" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <ChoiceBox prefHeight="34.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+         <TextField prefHeight="33.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+         <Label fx:id="subTitle" prefHeight="18.0" prefWidth="216.0" text="Valor Final" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="6">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="242.0" text="Calcular" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="8" />
+      </children>
+   </GridPane>
 </VBox>

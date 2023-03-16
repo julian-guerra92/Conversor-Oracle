@@ -47,4 +47,21 @@ public class CurrencyApi {
             currenciesList.put(key, value);
         }
     }
+
+    public float getExchangeRate(String currenci, String source) throws IOException, InterruptedException {
+        HttpClient httpClient = HttpClient.newHttpClient();
+        HttpRequest httpRequest = HttpRequest.newBuilder()
+                .uri(URI.create(API_BASE_URL + "/live?source=" + source + "&currencies=" + currenci))
+                .GET()
+                .header("apiKey", apiKey)
+                .build();
+        HttpResponse<String> httpResponse = httpClient.send(
+                httpRequest,
+                HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8)
+        );
+        JSONObject response = new JSONObject(httpResponse.body());
+        JSONObject exchageRate = response.getJSONObject("quotes");
+        return exchageRate.getFloat(source+currenci);
+    }
+
 }
